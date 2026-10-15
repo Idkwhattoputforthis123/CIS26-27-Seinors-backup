@@ -1,0 +1,360 @@
+/*
+Portfolio style sheet
+Table of contents:
+    1. variables colors and fonts
+    2. Base Styles and CSS resets
+    3. Header and navagation (flexbox)
+    4. about section grid
+    5. skills section flexbox w wrap
+    6. project cards.      grid auto fit with flexbox
+    7. footer grid w flexbox
+    8. Responsive media queries
+*/
+
+/*.  1 variables
+    change a color here and it changes everywhere
+*/
+
+:root {
+    --ink:              #17324a /* dark navy */;
+    --ink-soft:         #4a6075  /* softer text */;
+    --paper:            #f5f8fa     /*paper background*/;
+    --white:            #ffffff;
+    --line:             #d3dee5 /*borders*/;
+    --river:            #1f7a8c /*main accent: links, buttons*/;
+    --river-dark:        #165f6d;
+    --gold:               #f2b134;
+
+    --font-head:  "space Grotesk",  "Segoe UI",  Arial, sans-serif;
+    --font-body:  "Source Sans 3", "Segoe UI", Ariel, sans-serif;
+    --max-width: 1100px;
+    --header-height: 70px;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    color: var(--ink);
+    background-color: var(--paper);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-head);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--river);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px; 
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* shared space for all main section */
+main section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem a.5rem;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/*
+header and navigation with flexbox added 
+*/
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: var(--header-height);
+    background-color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-initial {
+    font-family: var(--font-head);
+    font-weight: 700;
+    background-color: var(--gold);
+    color: var(--ink);
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-name {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 4 about section grid */
+.about {
+    display: grid;
+    grid-template-columns: 260px 1fr; /* fixed photo column */
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-photo {
+    aspect-ratio: 1 / 1; 
+    background-color: var(--river);
+    border-radius: 50%;
+    border: 6px solid var(--gold);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: var(--font-head);
+    font-size:  4.5rem;
+    font-weight: 700;
+}
+
+.about-photo .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* fills circle without strechting*/
+}
+
+.about-text h1 {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    color: var(--river-dark);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.about-text p {
+    max-width: 65ch;
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--river);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.button:hover {
+    background-color: var(--river-dark);
+}
+
+/* ======================= flexbox w wrap=========*/
+.skills {
+    border-top: 1px solid var(--line);
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 0.75rem;
+}
+
+.skills-list li {
+    padding: 0.5rem 1.1rem;
+    background-color: white;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/*projects collumn */
+.projects {
+    border-top: 1px solid var(--line) ;
+}
+
+.section-intro {
+    color: var(--ink-soft);
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+}
+
+/* auto fit minmax responsive cards with no media query. 
+each card is at least 280px wide and browser fits as many as cols as it can nd shares the leftover space evenly*/
+.card-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+}
+
+.card {
+    background-color: var(--white);
+    border: 1px solid var(line);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;  /*stack banner and body vertically*/
+}
+
+.card-banner {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* banner color shows the project type*/
+.banner-html { background-color: var(--ink);}
+.banner-css {background-color: var(--river);}
+.banner-js {background-color: #6b4c9a;}
+.banner-py {background-color: var(--gold);}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-body p{
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.tags li {
+    font-size: 0.85rem;
+    padding: 0.15rem .6rem;
+    background-color: var(--paper);
+    border: 1px, solid var(--line);
+    border-radius: 4px;
+}
+
+.card-link {
+    margin-top: auto;
+    align-self: flex-start;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+}
+
+.card-link:hover {
+    color: var(--river-dark);
+    border-bottom
+}
+.site-footer {
+    background-color: var(--ink);
+    color: var(white);
+    padding: 3.5rem 1.5rem 1.5rem ;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: 2.5rem;
+}
+
+.footer-col {
+    font-size: 1.2rem;
+    color: white;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+}
+
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col {
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.footer-col li {
+    color: #ffffff;
+}
+
+.footer-col a {
+    color: #ffffff;
+}
+
+.footer-col a:hover {
+    color: #f2b134;
+    text-decoration: none;
+}
+
+

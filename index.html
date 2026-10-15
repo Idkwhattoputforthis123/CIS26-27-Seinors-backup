@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Conte 2027 Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <a href="#about" class="logo">
+        <span class="logo-initial">AC</span>
+        <span class="logo-name">Andrew Conte</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!--
+        About biography
+        Use CSS grid: a photo collum and a text collum 
+        on small screens the grid collaspes to one collum
+        -->
+        <section id="about" class="about">
+            <div class="about-photo">
+                <!--replace with my photo-->
+                <span>AC</span>
+            </div>
+
+            <div class="about-text">
+                                <h1>Hi, I'm Andrew Conte</h1>
+                <p class="tagline">Computer &amp; Information Science, Class of 2027</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illum quam aut perferendis voluptatem debitis ducimus quo id explicabo saepe sed facilis, minus, rerum veniam cupiditate obcaecati velit neque?</p>
+                <a href="#projects" class="button">See my projects.</a>
+            </div>
+        </section>
+
+        <!--
+        skills section flexbox row that wraps on new lines as needed
+        -->
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Flexbox</li>
+                <li>CSS Grid</li>
+                <li>Responsive Desing</li>
+                <li>Javascript</li>
+                <li>Python</li>
+                <li>VS Code</li>
+                <li>Cybersecruity Basics</li>
+            </ul>
+        </section>
+        <!--
+        The card container uses css grid with auto fit number of cols change with screen width with no mq each card uses flexbox (col) SO THE U PORT LINK ALWAYS SITS AT THE BOTTOM 
+        -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <p class="section-intro">
+                Work from my Juinor year and Seinor year in Computer and Information Science. For my seinor year I only work on the SUNY Canton Campus. 
+            </p>
+
+            <!-- Project Card (Copy this whole article to add a new card)-->
+            <div class="card">
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-banner banner-html"> My First project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Porject</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloribus at quidem totam laboriosam iste architecto id, eligendi nobis autem soluta velit obcaecati esse, asperiores nam eius sunt voluptatibus.</p>
+                    <ul class="tags">
+                    <li>HTML</li>
+                    </ul>
+                    
+                <a href="" class="card-link">View Project</a>
+                </div>
+             </article>
+                         <div class="card-grid"></div>
+                <article class="card">
+                    <div class="card-banner banner-html"> My First project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Porject</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloribus at quidem totam laboriosam iste architecto id, eligendi nobis autem soluta velit obcaecati esse, asperiores nam eius sunt voluptatibus.</p>
+                    <ul class="tags">
+                    <li>HTML</li>
+                    </ul>
+                    
+                <a href="" class="card-link">View Project</a>
+                </div>
+             </article>            <div class="card-grid"></div>
+                <article class="card">
+                    <div class="card-banner banner-html"> My First project
+                    </div>
+                    <div class="card-body">
+                        <h3>My First Porject</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt doloribus at quidem totam laboriosam iste architecto id, eligendi nobis autem soluta velit obcaecati esse, asperiores nam eius sunt voluptatibus.</p>
+                    <ul class="tags">
+                    <li>HTML</li>
+                    </ul>
+                    
+                <a href="" class="card-link">View Project</a>
+                </div>
+             </article>
+             </div>
+             </div>
+        </section>
+
+    
+    </main>
+        <!--uses css grid with three euqal columns on small screen it stacks into one single column -->
+    <footer id="contact" class="site-footer">
+        <div class="footer-grid">
+            <!-- Column one contact section-->
+            <div class="footer-col">
+                <h2>Contact</h2>
+                <ul>
+                    <li>Email: <a href="mailto:cte-andrew.conte@sllboces.org">Andrew Conte</a></li>
+                    <li>Github: <a href="" target="_blank">My Portfolio</a></li>
+                    <li>St. Lawrence Lewis Boces Computer &amp; Information Science.</li>
+                </ul>
+            </div>
+            <!-- Column 2 program information-->
+             <div class="footer-col">
+            <h2>CIS Program</h2>
+            <ul>
+                <li>SLL Boces - Computer &amp; Information Science Class of 2027</li>
+                <li>State University of New York at Canton - Class of </li>
+                <li>Home School: Norwood Norfolk Central School</li>
+            </ul>
+            </div>
+            <!--Column 3 goals and credentials-->
+            <div class="footer-col">
+                <h2>Goals and Credentials:</h2>
+                <ul>
+                    <li>Graduating June 2027</li>
+                    <li>Certifications</li>
+                        <ul>
+                            <li>YouScience Computer Programming 2 Certification</li>
+                        </ul>
+                    <li>College Credits</li>
+                    <ul>
+                        <li>CYBR 153; Computer &amp; Logic Algorithms</li>
+                        <li>CYBR 172; Computer Fundementals- 3 credits</li>
+                        <li>CYBR 181; Programming Fundementals</li>
+                        <li>CYBR 165; Survery of CyberSecruity - 3 Credits</li>
+                        <li>DATA 155; Survery of Data Science - 3 Credits</li>
+                        <li>Total College Credits: 15 Credits</li>
+                    </ul>
+                    <li>Next Step: Social working bachelors at SUNY Plattsburg.</li>
+                    <li>Downloading resumue.</li>
+                </ul>
+            </div>
+        
+        </div>
+        <!--bottom bar: flexbox spreads these two items apart-->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Andrew Conte. All rights reserved.</p>
+            <a href="#about">Back to top</a>
+        </div>
+    </footer>
+</body>
+</html>
